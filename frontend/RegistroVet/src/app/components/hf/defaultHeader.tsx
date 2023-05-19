@@ -1,4 +1,4 @@
-import styles from "./defaultheader.module.css"
+import styles from "../../assets/styles/defaultheader.module.css"
 
 import Image from 'next/image'
 import logoHorizontal from "../../assets/images/logo-horizontal.png"
@@ -10,7 +10,7 @@ export default function Header() {
                 <div className={styles.barra}>
                     <div className={styles.wrapperLogo}>
                         <a href="/" className={styles.logoHorizontal}> 
-                            <Image src={logoHorizontal} alt="Logotipo-horizontal"/> 
+                            <Image src={logoHorizontal} alt="Logotipo-horizontal" priority/> 
                         </a>
                     </div>
                     <div className={styles.wrapperLinks}>

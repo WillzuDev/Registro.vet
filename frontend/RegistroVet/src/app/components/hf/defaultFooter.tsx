@@ -1,5 +1,6 @@
 
-import styles from "./defaultfooter.module.css"
+import styles from "../../assets/styles/defaultfooter.module.css"
+
 import Image from 'next/image'
 
 import FaceLogo from "../../assets/images/face-logo.png"
@@ -9,7 +10,7 @@ import LogoVertical from "../../assets/images/logo-vertical.png"
 
 
 export default function Footer() {
-    return (    
+    return (
         <footer className={styles.footer}>
             <div className={styles.logoFooter}> <Image src={LogoVertical} alt="logo registrovet" /> </div>
 

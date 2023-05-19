@@ -1,11 +1,11 @@
 @font-face {
   font-family: Geraldton;
-  src: local('Geraldton'), url("./assets/fonts/GeraldtonRegular.otf");
+  src: local('Geraldton'), url("../fonts/GeraldtonRegular.otf");
 }
 
 @font-face {
   font-family: Bluebarry;
-  src: local('Bluebarry'), url("./assets/fonts/Blueberry.ttf");
+  src: local('Bluebarry'), url("../fonts/Blueberry.ttf");
 }
 
 .body {
@@ -175,7 +175,7 @@
 
 .main .wrappericons .icons a{
   background: #5F5F77;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   padding: 0 .3rem;
   text-decoration: none;
   color: #E6F3F3;
