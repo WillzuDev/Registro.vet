@@ -1,6 +1,6 @@
 import Main from "@/comp/bodys/homepage"
 import Header from "@/comp/hf/defaultHeader"
-import Footer from "@/comp/hf/defaultFooter"
+import Footer from "@/comp/hf/defaultfooter"
 
 export default function Home() {
   return (

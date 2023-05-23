@@ -3,10 +3,10 @@ import styles from "../../assets/styles/defaultfooter.module.css"
 
 import Image from 'next/image'
 
-import FaceLogo from "../../assets/images/face-logo.png"
-import InstaLogo from "../../assets/images/insta-logo.png"
-import TwitterLogo from "../../assets/images/twitter-logo.png"
-import LogoVertical from "../../assets/images/logo-vertical.png"
+import FaceLogo from "@/img/face-logo.png"
+import InstaLogo from "@/img/insta-logo.png"
+import TwitterLogo from "@/img/twitter-logo.png"
+import LogoVertical from "@/img/logo-vertical.png"
 
 
 export default function Footer() {

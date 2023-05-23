@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -20,14 +24,32 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/app*"],
-      "@/font/*":["./src/app/assets/fonts/*"],
-      "@/img/*":["./src/app/assets/images/*"],
-      "@/styles/*": ["./src/app/assets/styles/*"],
-      "@/comp/*": ["./src/app/components/*"],
-      "@/reset": ["./node_modules/normalize.css/normalize.css"],
+      "@/*": [
+        "./src/app*"
+      ],
+      "@/font/*": [
+        "./src/app/assets/fonts/*"
+      ],
+      "@/img/*": [
+        "./src/app/assets/images/*"
+      ],
+      "@/styles/*": [
+        "./src/app/assets/styles/*"
+      ],
+      "@/comp/*": [
+        "./src/app/components/*"
+      ],
+      "@/reset": [
+        "./node_modules/normalize.css/normalize.css"
+      ]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/pages/api/cadastro.js", "src/app/pages/api/cadastro.js", "src/app/components/bodys/cadastro.tsx", "src/app/components/bodys/cadastro.tsx"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "src/app/components/bodys/cadastro.tsx", 
+    "src/app/pages/api/form.js"  
+  ],
 }
