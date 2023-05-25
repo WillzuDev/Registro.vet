@@ -8,10 +8,6 @@
   src: local('Bluebarry'), url("../fonts/Blueberry.ttf");
 }
 
-body {
-  background-color: #E6F3F3;
-}
-
 main{
   width:75%;
   margin: 0 12.5%;

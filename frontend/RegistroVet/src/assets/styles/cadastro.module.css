@@ -76,9 +76,7 @@ main{
     border: none;
 }
 
-.wrapperCadastro .wrapperUser .form .name input::placeholder,
-.wrapperCadastro .wrapperUser .form .email input::placeholder,
-.wrapperCadastro .wrapperUser .form .password input::placeholder {
+.wrapperCadastro .wrapperUser .form  ::placeholder {
     font-size: 1.5rem;
     opacity: 70%;
 }
