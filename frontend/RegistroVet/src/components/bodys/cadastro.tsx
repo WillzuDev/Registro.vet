@@ -17,13 +17,22 @@ export default function Cadastro() {
     const { register, handleSubmit} = useForm();
 
     const onSubmit = async (dataFromForm: any) => {
-        const {data} = await axios.post("http://localhost:8080/api/cadastro",
-            dataFromForm,
-        {
-            headers: {
+        try {
+            const response = await axios.post("http://localhost:8080/api/cadastro", dataFromForm, {
+                headers: {
                 'Content-Type': 'application/json',
+                }
+            });
+        
+            if (response.status === 200) {
+                window.location.href = '/login';
+            } else {
+                const errorMessage = response.data;
+                alert('Ocorreu um erro: ' + errorMessage);
             }
-        })
+        } catch (error: any) {
+            alert(error.response.data);
+        }
     };
 
     return (
