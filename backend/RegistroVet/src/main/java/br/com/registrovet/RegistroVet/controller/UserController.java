@@ -1,7 +1,8 @@
 package br.com.registrovet.RegistroVet.controller;
 
+import br.com.registrovet.RegistroVet.dto.Login;
 import br.com.registrovet.RegistroVet.dto.UserDTO;
-import br.com.registrovet.RegistroVet.model.LoginRequest;
+import br.com.registrovet.RegistroVet.model.User;
 import br.com.registrovet.RegistroVet.service.TokenService;
 import br.com.registrovet.RegistroVet.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,10 +19,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api")
 public class UserController {
-    @Autowired
-    private TokenService tokenService;
+
     @Autowired
     private AuthenticationManager authenticationManager;
+    @Autowired
+    private TokenService tokenService;
     @Autowired
     private UserService userService;
 
@@ -40,13 +42,16 @@ public class UserController {
             String errorMessage = "Erro: já existe um usuário com este email cadastrado";
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorMessage);
         }
-
     }
     @PostMapping("/login")
-    public String token(@RequestBody LoginRequest userLogin) {
+    public String token(@RequestBody Login login) {
         System.out.println("start auth");
-        Authentication authentication = authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(userLogin.username(), userLogin.password()));
-        return tokenService.generateToken(authentication);
+        UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken =
+                new UsernamePasswordAuthenticationToken(login.username(), login.password());
+        System.out.println("montando user para ser autenticado");
+        Authentication authenticate = this.authenticationManager.authenticate(usernamePasswordAuthenticationToken);
+        System.out.println("autenticado");
+        var user = (User) authenticate.getPrincipal();
+        return tokenService.generateToken(user);
     }
 }
