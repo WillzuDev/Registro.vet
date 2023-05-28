@@ -1,3 +1,6 @@
+import { useForm } from "react-hook-form";
+import axios from 'axios';
+
 import styles from "../../assets/styles/login.module.css"
 import "../../../node_modules/normalize.css/normalize.css"
 
@@ -7,8 +10,29 @@ import Footer from "../hf/defaultfooter";
 import MailIcon from "../../assets/images/mail-icon.png"
 import lockInIcon from "../../assets/images/lock-icon.png"
 
-
 export default function Login() {
+
+    const { register, handleSubmit} = useForm();
+
+    const onSubmit = async (dataFromForm: any) => {
+        try {
+            const response = await axios.post("http://localhost:8080/api/login", dataFromForm, {
+                headers: {
+                'Content-Type': 'application/json',
+                }
+            });
+        
+            if (response.status === 200) {
+                window.location.href = '/homepage';
+            } else {
+                const errorMessage = response.data;
+                alert('Email ou senha estão incorretos' + errorMessage);
+            }
+        } catch (error: any) {
+            alert("Email ou senha estão incorretos");
+        }
+    };
+
     return (
         <div>
             <body>
@@ -22,18 +46,18 @@ export default function Login() {
 
                         <div className={styles.wrapperForm}>
 
-                            <form className={styles.form} action="/login/user" method="post">
+                            <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
 
                                 <div className={styles.emailPassword}>
                     
                                     <div className={styles.email}>
                                         <label htmlFor="inputEmail" id="textField"><img src={MailIcon} alt="Icone de carta"/></label>
-                                        <input type="email" placeholder="Email" className={styles.inputEmail} name="email" required/>
+                                        <input type="email" placeholder="Email" className={styles.inputEmail} {...register("username", {required: true})} />
                                     </div>
                     
                                     <div className={styles.password}>
                                         <label htmlFor="inputPassword" id="textField"><img src={lockInIcon} alt="Icone de cadeado"/></label>
-                                        <input type="password" placeholder="Senha" className={styles.inputPassword} name="password" required/>
+                                        <input type="password" placeholder="Senha" className={styles.inputPassword} {...register("password", {required: true})}/>
                                     </div>
                     
                                 </div>
