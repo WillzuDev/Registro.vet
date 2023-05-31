@@ -1,0 +1,117 @@
+@font-face {
+    font-family: Geraldton;
+    src: local('Geraldton'), url("../fonts/GeraldtonRegular.otf");
+}
+
+@font-face {
+    font-family: Blueberry;
+    src: local('Bluebarry'), url("../fonts/Blueberry.ttf");
+}
+
+body {
+    background-color: #E6F3F3;
+}
+
+main{
+    width:75%;
+    height: 67.6vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0% 12.5%;
+    padding: 0.1rem;
+    font-family: Geraldton;
+    background-color: #E6F3F3;
+}
+
+.titleCadastro h1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    color: #5E6075;
+    padding: 0.8vh;
+    font-family: Blueberry;
+}
+
+.wrapperCadastro {
+    width: 28%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    background-color: #E6F3F3;
+    padding: 2rem 2rem 2rem 2rem;
+    margin: 0 0 5.5rem 0;
+    box-shadow: 0px 0px 12px 0px rgba(48, 48, 48, 0.39);
+}
+
+.wrapperCadastro .wrapperUser {
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapperCadastro .wrapperUser .form{
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.wrapperCadastro .wrapperUser .name, .email, .password{
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+    border-bottom: 1px solid #5E6075;
+}
+
+.wrapperCadastro .wrapperUser .password img{
+    padding: 0 0.4rem 0 0.1rem;
+}
+
+.wrapperCadastro .wrapperUser .form input{
+    width: 80%;
+    height: 2rem;
+    background-color: #E6F3F3;
+    font-size: 1.5rem;
+    border: none;
+}
+
+.wrapperCadastro .wrapperUser .form  ::placeholder {
+    font-size: 1.5rem;
+    opacity: 70%;
+}
+
+.wrapperCadastro .wrapperUser .wrapperCadastrarButton {
+    margin: 2.5rem 6rem;
+    padding: 0 0 0 1.4rem;
+}
+
+.wrapperCadastro .wrapperCadastrarButton .cadastrarButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Blueberry;
+    background: transparent;
+    font-size: 1.5rem;
+    padding: 0.2em 1rem;
+    text-decoration: none;
+    background-color: #5E6075;
+    color: #E6F3F3;
+    cursor: pointer;
+}
+
+.wrapperCadastro .wrapperAlreadyUser {
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapperCadastro .wrapperAlreadyUser .text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.wrapperCadastro .wrapperAlreadyUser .text a {
+    text-decoration: none;
+}

@@ -1,0 +1,171 @@
+@font-face {
+  font-family: Geraldton;
+  src: local('Geraldton'), url("../fonts/GeraldtonRegular.otf");
+}
+
+@font-face {
+  font-family: Bluebarry;
+  src: local('Bluebarry'), url("../fonts/Blueberry.ttf");
+}
+
+main{
+  width:75%;
+  margin: 0 12.5%;
+  background-color: rgb(176, 170, 163);
+  font-family: Geraldton;
+}
+
+.firstbanner {
+  width: 100%;
+  height: 30vh;
+  display: flex;
+  background-color: #BDBECA;
+  align-items: center;
+}
+
+.firstbanner .wrapperVetImg{
+  width: 55%;
+  height: 100%;
+}
+
+.firstbanner .wrapperVetImg .vetimg {
+  width: 100%;
+  height: 100%;
+}
+
+.firstbanner .slogan {
+  width: 45%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+.firstbanner .slogan .logofirstbanner{ 
+  width: 30%;
+  height: 70%;
+  display: flex;
+  align-items: center;
+}
+
+.firstbanner .slogan .logofirstbanner .logoFirstBannerIMG {
+  width: 90%;
+  height: 90%;
+  background: center center no-repeat;
+}
+
+.firstbanner .slogan .sloganHome {
+  color: #E6F3F3;
+  font-size: 2rem;
+  text-shadow: 1px 1px 2px #808080;
+  text-align: center;
+}
+
+
+
+.secondCard{
+  width: 100%;
+  height: 19vh;
+  background: #5F5F77;
+  display: flex;
+}
+
+.secondCard .wrapperBenefic {
+  width: 35%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+
+.secondCard .wrapperBenefic h2{
+  font-family: Bluebarry;
+  color: #E6F3F3;
+  font-size: 50px;
+}
+
+
+.thirdCard{
+  width: 100%;
+  height: 19vh;
+  background: #E6F3F3;
+  display: flex;
+}
+
+.thirdCard .wrapperStart {
+  width: 35%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.thirdCard .wrapperStart h2 {
+  font-family: Bluebarry;
+  color: #5E6075;
+  font-size: 50px;
+}
+
+.thirdCard .wrappericons .icons img {
+  width: 100%;
+}
+
+.wrappericons{
+  width: 65%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrappericons .icons{
+  width: 30%;
+  height: 100%;
+  display: flex;
+  gap: .5rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrappericons .icons p {
+  margin: 0;
+}
+
+.wrappericons .icons .wrapperimage{
+  width: 40%;
+  height: 60%;
+  border-radius: 5rem;
+  background-color: #E6F3F3;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrappericons .icons .wrapperimage img{
+  width: 65%;
+  height: 70%;
+}
+
+.thirdCard .wrappericons .icons .wrapperimage img {
+  width: 100%;
+  height: 100%;
+}
+
+.wrappericons .icons p{
+  font-family: Geraldton;
+  font-size: 1.7rem;
+  color: #E6F3F3;
+}
+
+.wrappericons .icons a{
+  background: #5F5F77;
+  font-size: 1.5rem;
+  padding: 0 .3rem;
+  text-decoration: none;
+  color: #E6F3F3;
+}
