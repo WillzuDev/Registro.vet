@@ -59,6 +59,7 @@ public class UserController {
                 System.out.println("autenticado");
                 var user = (User) authenticate.getPrincipal();
                 String token = tokenService.generateToken(user);
+                System.out.println(token);
                 return ResponseEntity.ok(token);
             } else {
                 throw new UsernameNotFoundException("Email ou senha estão incorretos");
@@ -68,17 +69,4 @@ public class UserController {
             return ResponseEntity.status(HttpStatus.FORBIDDEN).body(errorMessage);
         }
     }
-
-
-//    @PostMapping("/login")
-//    public String token(@RequestBody Login login) {
-//        System.out.println("start auth");
-//        UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken =
-//                new UsernamePasswordAuthenticationToken(login.username(), login.password());
-//        System.out.println("montando user para ser autenticado");
-//        Authentication authenticate = this.authenticationManager.authenticate(usernamePasswordAuthenticationToken);
-//        System.out.println("autenticado");
-//        var user = (User) authenticate.getPrincipal();
-//        return tokenService.generateToken(user);
-//    }
 }
