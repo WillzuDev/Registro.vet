@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import axios from 'axios';
+import Cookies from 'js-cookie';
 
 import styles from "../../assets/styles/login.module.css"
 import "../../../node_modules/normalize.css/normalize.css"
@@ -21,8 +22,11 @@ export default function Login() {
                 'Content-Type': 'application/json',
                 }
             });
-        
+            
             if (response.status === 200) {
+                const data = response.data;
+                Cookies.set('CookieJWT', data)
+                // console.log(Cookies.get('CookieJWT'))
                 window.location.href = '/homepage';
             } else {
                 const errorMessage = response.data;
