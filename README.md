@@ -23,5 +23,5 @@ The creator of the project is [Giuliana Karla](https://www.behance.net/giuxdesig
 
 **Other Technologies:**
 - __Frontend:__ React Hook Form, React Router, Axios, Vite.
-- __Backend:__ MVC pattern, Spring Boot, Spring Security, JWT, Spring Data JPA, API REST;
+- __Backend:__ MVC pattern, Spring Boot, Spring Security, JWT, Spring Data JPA, API REST.
 
