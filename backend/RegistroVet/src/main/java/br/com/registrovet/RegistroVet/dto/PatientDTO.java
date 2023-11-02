@@ -3,6 +3,7 @@ package br.com.registrovet.RegistroVet.dto;
 import br.com.registrovet.RegistroVet.model.enums.Breeds;
 import br.com.registrovet.RegistroVet.model.enums.Gender;
 import br.com.registrovet.RegistroVet.model.enums.Species;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class PatientDTO {
     private Long id;
@@ -13,6 +14,7 @@ public class PatientDTO {
     private Gender gender;
     private Species specie;
     private Breeds breed;
+    private String tutorCPF;
 
     public Long getId() {
         return id;
@@ -61,5 +63,12 @@ public class PatientDTO {
     }
     public void setBreed(Breeds breed) {
         this.breed = breed;
+    }
+    public String getTutorCPF() {
+        return tutorCPF;
+    }
+    @JsonProperty(value = "tutorCPF")
+    public void setTutorCPF(String tutorCPF) {
+        this.tutorCPF = tutorCPF;
     }
 }
