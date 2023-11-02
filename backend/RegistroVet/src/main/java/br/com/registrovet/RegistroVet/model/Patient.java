@@ -4,7 +4,6 @@ import br.com.registrovet.RegistroVet.model.enums.Breeds;
 import br.com.registrovet.RegistroVet.model.enums.Gender;
 import br.com.registrovet.RegistroVet.model.enums.Species;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "patients")
@@ -12,20 +11,23 @@ public class Patient {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @NotNull
+    @JoinColumn (nullable = false)
     private String name;
     private int age;
     private double weight;
     private int height;
-    @NotNull
+    @JoinColumn (nullable = false)
     @Enumerated(EnumType.STRING)
     private Gender gender;
-    @NotNull
+    @JoinColumn (nullable = false)
     @Enumerated(EnumType.STRING)
     private Species specie;
-    @NotNull
+    @JoinColumn (nullable = false)
     @Enumerated(EnumType.STRING)
     private Breeds breed;
+    @ManyToOne
+    @JoinColumn (name = "CPF_tutor", nullable = false)
+    private Tutor tutorCPF;
 
     public Long getId() {
         return this.id;
@@ -74,5 +76,11 @@ public class Patient {
     }
     public void setBreed(Breeds breed) {
         this.breed = breed;
+    }
+    public Tutor getTutorCPF() {
+        return  tutorCPF;
+    }
+    public void setTutorCPF(Tutor tutorCPF) {
+        this.tutorCPF = tutorCPF;
     }
 }
