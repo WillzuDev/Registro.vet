@@ -1,7 +1,9 @@
 package br.com.registrovet.RegistroVet.model;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
+
+import java.util.List;
 
 @Entity
 @Table(name = "tutors")
@@ -9,14 +11,19 @@ public class Tutor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @NotNull
+    @JoinColumn (nullable = false)
     private String name;
-    @NotNull
+    @JoinColumn (nullable = false)
     @Column(unique = true)
+    @Pattern(regexp = "^\\d{3}\\.?\\d{3}\\.?\\d{3}-?\\d{2}$",
+            message = "CPF deve ter 11 dígitos")
     private String CPF;
-    @NotNull
+    @JoinColumn (nullable = false)
+    @Pattern(regexp = "^\\(?\\d{2}\\)?\\s?\\d{4,5}-?\\d{4}$")
     private String phone;
     private String address;
+    @OneToMany(mappedBy = "tutorCPF")
+    private List<Patient> patients;
 
     public Long getId() {
         return id;
