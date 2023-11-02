@@ -21,19 +21,6 @@ public class PatientTutorController {
     @Autowired
     private TutorService tutorService;
 
-    @PostMapping("/newpet")
-    public ResponseEntity<Object> createPet(@RequestBody PatientDTO patientDTO) {
-        System.out.println("cadastrando pet");
-        PatientDTO savedPatient = patientService.savePatient(patientDTO);
-        if (savedPatient != null) {
-            System.out.println("pet cadastrado");
-            return ResponseEntity.status(HttpStatus.OK).build();
-        } else {
-            System.out.println("erro");
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
-        }
-    }
-
     @PostMapping("/newtutor")
     public ResponseEntity<Object> createTutor(@RequestBody TutorDTO tutorDTO) {
         System.out.println("cadastrando tutor");
@@ -48,6 +35,18 @@ public class PatientTutorController {
         } catch (Exception e) {
             String errorMessage = "Erro: já existe um tutor já cadastrado com este CPF";
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorMessage);
+        }
+    }
+
+    @PostMapping("/newpet")
+    public ResponseEntity<Object> createPet(@RequestBody PatientDTO patientDTO) {
+        PatientDTO savedPatient = patientService.savePatient(patientDTO);
+        if (savedPatient != null) {
+            System.out.println("pet cadastrado");
+            return ResponseEntity.status(HttpStatus.OK).build();
+        } else {
+            System.out.println("erro");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
     }
 }
