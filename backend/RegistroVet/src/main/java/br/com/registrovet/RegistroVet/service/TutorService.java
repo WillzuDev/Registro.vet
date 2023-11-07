@@ -19,13 +19,13 @@ public class TutorService {
         tutorDTO.setPhone((formatPhone(tutorDTO.getPhone())));
         tutorDTO.setCPF((formatCPF(tutorDTO.getCPF())));
 
-        Tutor tutor = convetToTutor(tutorDTO);
+        Tutor tutor = convertToTutor(tutorDTO);
         Tutor savedTutor = tutorRepository.save(tutor);
 
         return convertToTutorDTO(savedTutor);
     }
 
-    private Tutor convetToTutor(TutorDTO tutorDTO) {
+    private Tutor convertToTutor(TutorDTO tutorDTO) {
         return modelMapper.map(tutorDTO, Tutor.class);
     }
 
