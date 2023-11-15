@@ -40,13 +40,18 @@ public class PatientTutorController {
 
     @PostMapping("/newpet")
     public ResponseEntity<Object> createPet(@RequestBody PatientDTO patientDTO) {
-        PatientDTO savedPatient = patientService.savePatient(patientDTO);
-        if (savedPatient != null) {
-            System.out.println("pet cadastrado");
-            return ResponseEntity.status(HttpStatus.OK).build();
-        } else {
-            System.out.println("erro");
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+        try {
+            PatientDTO savedPatient = patientService.savePatient(patientDTO);
+            if (savedPatient != null) {
+                System.out.println("pet cadastrado");
+                return ResponseEntity.status(HttpStatus.OK).build();
+            } else {
+                System.out.println("erro");
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+            }
+        } catch (Exception e) {
+            String errorMessage = "Erro: nao foi possivel criar o pet";
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorMessage);
         }
     }
 }
